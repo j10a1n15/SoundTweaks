@@ -6,7 +6,7 @@ package org.polyfrost.soundtweaks
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 //#endif
-import dev.deftu.omnicore.client.OmniClient.getInstance
+import dev.deftu.omnicore.api.client.sound.OmniClientSound
 import net.minecraft.client.audio.SoundEventAccessorComposite
 import net.minecraft.util.ResourceLocation
 import org.polyfrost.soundtweaks.config.SoundTweaksConfig
@@ -58,7 +58,7 @@ class SoundTweaks
         }
 
         fun getSounds(): MutableMap<ResourceLocation, SoundEventAccessorComposite> {
-            val registry = (getInstance().soundHandler as? SoundHandlerAccessor)?.getSoundRegistry()
+            val registry = (OmniClientSound.soundManager as? SoundHandlerAccessor)?.getSoundRegistry()
             return (if (isSchizoAsm) (registry as? RegistrySimpleAccessor)?.registryObjects else (registry as? SoundRegistryAccessor)?.sounds) ?: mutableMapOf()
         }
     }
