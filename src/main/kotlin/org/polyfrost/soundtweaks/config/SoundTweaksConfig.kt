@@ -1,13 +1,12 @@
 package org.polyfrost.soundtweaks.config
 
-import net.minecraft.client.resources.I18n
 import org.apache.commons.lang3.text.WordUtils
 import org.polyfrost.oneconfig.api.config.v1.Config
 import org.polyfrost.oneconfig.api.config.v1.Properties
 import org.polyfrost.oneconfig.api.config.v1.Tree
 import org.polyfrost.oneconfig.api.config.v1.Visualizer
-import org.polyfrost.oneconfig.utils.v1.dsl.subcategory
-import org.polyfrost.oneconfig.utils.v1.dsl.visualizer
+import org.polyfrost.oneconfig.api.config.v1.dsl.subcategory
+import org.polyfrost.oneconfig.api.config.v1.dsl.visualizer
 import org.polyfrost.soundtweaks.SoundTweaks
 import org.polyfrost.soundtweaks.SoundTweaks.Companion.getSounds
 import org.polyfrost.soundtweaks.SoundTweaks.Companion.volumes
