@@ -3,12 +3,15 @@ package org.polyfrost.soundtweaks
 //#if FABRIC
 //$$ import net.fabricmc.api.ModInitializer;
 //#elseif FORGE
+import dev.deftu.omnicore.api.client.commands.OmniClientCommands
+import dev.deftu.omnicore.api.client.commands.command
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 //#endif
 import dev.deftu.omnicore.api.client.sound.OmniClientSound
 import net.minecraft.client.audio.SoundEventAccessorComposite
 import net.minecraft.util.ResourceLocation
+import org.polyfrost.oneconfig.utils.v1.dsl.openUI
 import org.polyfrost.soundtweaks.config.SoundTweaksConfig
 import org.polyfrost.soundtweaks.mixins.RegistrySimpleAccessor
 import org.polyfrost.soundtweaks.mixins.SoundHandlerAccessor
@@ -32,6 +35,12 @@ class SoundTweaks
         event: FMLInitializationEvent
         //#endif
     ) {
+        OmniClientCommands.command("soundtweaks") {
+            runs {
+                config.openUI()
+                0
+            }
+        }.register()
     }
 
     companion object {

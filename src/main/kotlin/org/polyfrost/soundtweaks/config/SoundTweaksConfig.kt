@@ -14,6 +14,10 @@ import kotlin.jvm.java
 
 class SoundTweaksConfig : Config("${SoundTweaks.ID}_${SoundTweaks.MC}.json", SoundTweaks.NAME, Category.QOL) {
 
+    //init {
+    //    loadFrom("patcher_sounds.toml")
+    //}
+
     @Suppress("UnstableApiUsage")
     override fun makeTree(): Tree {
         return super.makeTree().apply {
